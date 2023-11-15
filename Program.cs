@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using Sharp_lessons.models;
 
 class Sequences
@@ -44,11 +45,8 @@ class Program
     int[] numbers = new int[]{11, 22, 33, 1, 2, 3};
     int K = 3;
     //var selectionKey = from p in numbers where (p % 10 == K) select p;
-    var selectionKey = numbers.Where(p => p % 10 == K);
+    var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
+        Console.WriteLine(selectionKey);
 
-    foreach (var item in selectionKey)
-    {
-        Console.WriteLine(item);
-    }
     }
 }

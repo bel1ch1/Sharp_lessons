@@ -32,8 +32,6 @@ A. Вывести первый положительный элемент пос�
     int[] numbers = new int[]{11, 22, 33, 1, 2, 3};
     int K = 3; // задаем переменную
     // применяем запросс
-    var selectionKey = numbers.Where(p => p % 10 == K);
-    // выводим в консоль
-    foreach (var item in selectionKey)
-        Console.WriteLine(item);
+    var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
+        Console.WriteLine(selectionKey);
 ```
