@@ -1,4 +1,7 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Sharp_lessons.models;
 using Microsoft.VisualBasic;
 using System.Security.Cryptography;
 using System.Xml.Schema;
@@ -36,12 +39,7 @@ class Sequences
             {"Shop1", "Shop2", "Shop3"}
         };
     };
-public class A
-    {
-    public int[] ID = new[] {1, 2, 3};
-    public int[]  Year_Of_Birth = new[] {1999, 2000, 2004};
-    public string[] Street = new [] {"Pervaya_ST", "VtorayaST", "Tretay_ST"};
-    };
+
 public class B {
     public string[] Article = new[] {"AXW-77", "BPX-97", "RGX-88"};
     public string[] Category = new[] {"Table", "Chair", "Bed"};
@@ -68,7 +66,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        A privet = new A();
 
-
+        Console.WriteLine(A.ID[0]);
     }
 }

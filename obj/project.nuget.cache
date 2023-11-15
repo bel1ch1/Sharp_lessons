@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0mGS/MevSqeN8j9aNmP2lfnNg3HwvQKcErDbyITZzntoWENqlx9iLmBiqDULuPNZ1CBGiKVzBb312pAPk74EkQ==",
+  "dgSpecHash": "GRMFzzPKyD3iDzisuQJmWmqjZGugBEtSIH95DDkKfhmsRfZj5QvNoQM3NB1SuZ6FadYcUt7CRFhpVXZFJEd1hQ==",
   "success": true,
-  "projectFilePath": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
+  "projectFilePath": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
