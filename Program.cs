@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sharp_lessons.models;
-using Microsoft.VisualBasic;
-using System.Security.Cryptography;
-using System.Xml.Schema;
 
 class Sequences
 {
@@ -40,34 +37,18 @@ class Sequences
         };
     };
 
-public class B {
-    public string[] Article = new[] {"AXW-77", "BPX-97", "RGX-88"};
-    public string[] Category = new[] {"Table", "Chair", "Bed"};
-    public string[] Country = new[] {"RUS", "GER", "TUR"};
-};
-public class C {
-    public int[] ID = new[] {1, 2, 3};
-    public string[] Shop = new[] {"Shop1", "Shop2", "Shop3"};
-    public int[] Discount = new[] {10, 5, 0};
-};
-public class D {
-    public string[] Article = new[] {"AXW-77", "BPX-97", "RGX-88"};
-    public string[] Shop = new[] {"Shop1", "Shop2", "Shop3"};
-    public int[] Price = new[] {7000, 4000, 10000};
-};
-public class E{
-    public int[] ID = new[] {1, 2, 3};
-    public string[] Article = new[] {"AXW-77", "BPX-97", "RGX-88"};
-    public string[] Shop = new[] {"Shop1", "Shop2", "Shop3"};
-};
-
-
 class Program
 {
     static void Main(string[] args)
     {
-        A privet = new A();
+    int[] numbers = new int[]{11, 22, 33, 1, 2, 3};
+    int K = 3;
+    //var selectionKey = from p in numbers where (p % 10 == K) select p;
+    var selectionKey = numbers.Where(p => p % 10 == K);
 
-        Console.WriteLine(A.ID[0]);
+    foreach (var item in selectionKey)
+    {
+        Console.WriteLine(item);
+    }
     }
 }
