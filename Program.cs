@@ -42,11 +42,9 @@ class Program
 {
     static void Main(string[] args)
     {
-    int[] numbers = new int[]{11, 22, 33, 1, 2, 3};
+    string[] numbers = new string[]{"11", "22", "33", "1", "2", "3"};
     int K = 3;
-    //var selectionKey = from p in numbers where (p % 10 == K) select p;
-    var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
-        Console.WriteLine(selectionKey);
+var result = numbers.LastOrDefault(p => p.Length == K && Char.IsDigit(p.FirstOrDefault()));
 
     }
 }
