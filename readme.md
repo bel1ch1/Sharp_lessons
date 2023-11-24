@@ -133,5 +133,12 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 на обратный.
 
 ```c#
+// необходимо вывести все четные числа до К не включая К
+    int K = 6;
+    int[] A = new int[]{1, 2, 3, 4, 5 ,6, 7, 8, 9};
 
+    var difference = A.Take(K -1).Where(p=> p % 2 == 0);
+
+    foreach(int i in difference)
+        Console.WriteLine(i);
 ```
