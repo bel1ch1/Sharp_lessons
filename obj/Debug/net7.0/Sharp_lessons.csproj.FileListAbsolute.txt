@@ -27,3 +27,17 @@ C:/SomeStaff/Sharp_lessons/obj/Debug/net7.0/ref/Sharp_lessons.dll
 /home/andy/Sharp_lessons/obj/Debug/net7.0/Sharp_lessons.pdb
 /home/andy/Sharp_lessons/obj/Debug/net7.0/Sharp_lessons.genruntimeconfig.cache
 /home/andy/Sharp_lessons/obj/Debug/net7.0/ref/Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.exe
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.deps.json
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.runtimeconfig.json
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.pdb
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.GeneratedMSBuildEditorConfig.editorconfig
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.AssemblyInfoInputs.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.AssemblyInfo.cs
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.csproj.CoreCompileInputs.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\refint\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.pdb
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.genruntimeconfig.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\ref\Sharp_lessons.dll
