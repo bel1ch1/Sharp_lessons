@@ -9,7 +9,7 @@ using System.Linq;
  ```
 
 ## Формат запуска
-Запуск проводится через интерфейс <a ref="https://learn.microsoft.com/ru-ru/dotnet/core/tools">.NET CLI</a>
+Запуск проводится через интерфейс <a ref="https://learn.microsoft.com/ru-ru/dotnet/core/tools">.NET CLI(7.0.403)</a>
 
 Запускать программы через терменал
 
@@ -92,7 +92,10 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
     string[] A = {"Aaaaa","Bbbbbb", "aaaaa", "Ccccc", "Ddddd"};
 
         // Take k -1 возвращает срез массива
-    var output = A.Take(K - 1).Where( value => char.IsUpper(value[0]) && value.Length % 2 != 0).Reverse();
+    var output = A.Take(K - 1).Where(
+         value => char.IsUpper(value[0])
+          && value.Length % 2 != 0
+          ).Reverse();
 
     foreach(var i in output)
         Console.WriteLine(i);
@@ -105,6 +108,29 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 до первого элемента, большего D (не включая его), а второй – все элементы, начиная с
 элемента с порядковым номером K. Полученную последовательность (не содержащую
 одинаковых элементов) отсортировать по убыванию.
+
+```c#
+    int D = 3;
+    int K = 6;
+    int[] A = new int[]{1, 2, 3, 4, 5 ,6, 7, 8, 9};
+    int[] Q = A.Distinct().ToArray(); // создаем копию А без дубликатов
+
+    var query1 = Q.TakeWhile(p=> p < D);  // берем все числа до 3 не включительно
+    var query2 = Q.SkipWhile(p=> p < K);  // берем все числа больште 6 включительно
+
+    var query3 = query1.Union(query2);  // объединяем последоватеольности 2 запросов
+
+    foreach(int i in query3)
+        Console.WriteLine(i);
+```
+
+## 4.7
+
+Даны целое число K (> 0) и целочисленная последовательность A. Найти
+теоретико-множественную разность двух фрагментов A: первый содержит все четные
+числа, а второй – все числа с порядковыми номерами, большими K. В полученной
+последовательности (не содержащей одинаковых элементов) поменять порядок элементов
+на обратный.
 
 ```c#
 
