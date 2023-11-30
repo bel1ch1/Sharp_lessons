@@ -9,6 +9,7 @@ using System.Linq;
  ```
 
 ## Формат запуска
+
 Запуск проводится через интерфейс <a ref="https://learn.microsoft.com/ru-ru/dotnet/core/tools">.NET CLI(7.0.403)</a>
 
 Запускать программы через терменал
@@ -154,11 +155,70 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 лексикографическом порядке по возрастанию.
 
 ```c#
-    var seq1 = A.Select(val => String.Join("", val.Take(K).ToList())); // выбираем все элементы из строк до К
-    var seq2 = A.SkipWhile(char.IsDigit); // выбираем все элементы после последней цыфры
+int K = 9;
+        string[] A = {
+            "ABC123",
+            "DEFGH",
+            "5678",
+            "HIJKL",
+            "MNOP9",
+            "QRSTU345"
+        };
 
-    var result = seq1.Intersect(seq2);
+    var seq1 = A.Select(val => String.Join("", val.Take(K).ToArray())); // выбираем все элементы из строк до К
 
-    foreach(string i in result)
-        Console.WriteLine(i);
+    for (int i = 0; i < A.Count; i++)
+        A[i] = new string(A[i].Reverse().ToArray()); // Переворачиваем все строки из списка
+
+    var seq2 = A.TakeWhile(p => !p.Any(char.IsDigit));  // выбираем элементы из строки до первой цифры
+
+    var result = seq1.Intersect(seq2);    // Пересечение двух последовательностей
+
+    foreach(string i in result) //  Организуем вывод
+        Console.WriteLine();
+```
+
+Идея в том, чтобы перевернуть каждую строку и взять все элементы до первой цифры не включительно
+
+## 4.9
+
+Исходная последовательность содержит сведения об абитуриентах. Каждый
+элемент последовательности включает следующие поля:
+<Номер школы> <Год поступления> <Фамилия>
+Для каждого года, присутствующего в исходных данных, вывести число различных школ,
+которые окончили абитуриенты, поступившие в этом году (вначале указывать число школ,
+затем год). Сведения о каждом годе выводить на новой строке и упорядочивать по
+возрастанию числа школ, а для совпадающих чисел — по возрастанию номера года.
+
+```c#
+List<Applicant> A = new List<Applicant>
+        {
+            new Applicant {
+                schoolId=1,
+                admissionYear=2019,
+                lastName="Volk"
+            },
+            new Applicant {
+                schoolId=2,
+                admissionYear=2020,
+                lastName="McGregor"
+            },
+            new Applicant {
+                schoolId=3,
+                admissionYear=2019,
+                lastName="Makhachev"
+            },
+            new Applicant {
+                schoolId=1,
+                admissionYear=2021,
+                lastName="Costa"
+            },
+            new Applicant {
+                schoolId=2,
+                admissionYear=2020,
+                lastName="Walker"
+            }
+        };
+
+
 ```
