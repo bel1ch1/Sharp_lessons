@@ -174,8 +174,8 @@ int K = 9;
 
     var result = seq1.Intersect(seq2);    // Пересечение двух последовательностей
 
-    foreach(string i in result) //  Организуем вывод
-        Console.WriteLine();
+    foreach(var i in result) //  Организуем вывод
+        Console.WriteLine(i);
 ```
 
 Идея в том, чтобы перевернуть каждую строку и взять все элементы до первой цифры не включительно
@@ -190,35 +190,6 @@ int K = 9;
 затем год). Сведения о каждом годе выводить на новой строке и упорядочивать по
 возрастанию числа школ, а для совпадающих чисел — по возрастанию номера года.
 
-```c#
-List<Applicant> A = new List<Applicant>
-        {
-            new Applicant {
-                schoolId=1,
-                admissionYear=2019,
-                lastName="Volk"
-            },
-            new Applicant {
-                schoolId=2,
-                admissionYear=2020,
-                lastName="McGregor"
-            },
-            new Applicant {
-                schoolId=3,
-                admissionYear=2019,
-                lastName="Makhachev"
-            },
-            new Applicant {
-                schoolId=1,
-                admissionYear=2021,
-                lastName="Costa"
-            },
-            new Applicant {
-                schoolId=2,
-                admissionYear=2020,
-                lastName="Walker"
-            }
-        };
-
+``c#
 
 ```

@@ -33,7 +33,7 @@ class Program
     var result = seq1.Intersect(seq2);    // Пересечение двух последовательностей
 
     foreach(string i in result)
-        Console.WriteLine();
+        Console.WriteLine(i);
 
 
     }
