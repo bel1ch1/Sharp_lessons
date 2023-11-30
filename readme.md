@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
  ```
 
 ## Формат запуска
@@ -155,17 +157,19 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 лексикографическом порядке по возрастанию.
 
 ```c#
-int K = 9;
-        string[] A = {
-            "ABC123",
-            "DEFGH",
-            "5678",
-            "HIJKL",
-            "MNOP9",
-            "QRSTU345"
-        };
+    int K = 3;
+         List<string> A = new List<string>()
+ {
+     "ABC123",
+     "DEF456",
+     "XYZ12",
+     "LMN34",
+     "PQR5",
+     "STU",
+     "VW6"
+ };
 
-    var seq1 = A.Select(val => String.Join("", val.Take(K).ToArray())); // выбираем все элементы из строк до К
+    var seq1 = A.Select(val => String.Join("", val.Take(3 * K).ToArray())); // выбираем все элементы из строк до К
 
     for (int i = 0; i < A.Count; i++)
         A[i] = new string(A[i].Reverse().ToArray()); // Переворачиваем все строки из списка
