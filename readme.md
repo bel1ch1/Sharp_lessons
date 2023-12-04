@@ -6,8 +6,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
-
  ```
 
 ## Формат запуска
@@ -169,20 +167,15 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
      "VW6"
  };
 
-    var seq1 = A.Select(val => String.Join("", val.Take(3 * K).ToArray())); // выбираем все элементы из строк до К
+     var seq1 = A.Take(K * 3); // выбираем все элементы из строк до К * 3
 
-    for (int i = 0; i < A.Count; i++)
-        A[i] = new string(A[i].Reverse().ToArray()); // Переворачиваем все строки из списка
-
-    var seq2 = A.TakeWhile(p => !p.Any(char.IsDigit));  // выбираем элементы из строки до первой цифры
-
+    var seq2 = A.Select(p => p).Where(p => p.i)
+    
     var result = seq1.Intersect(seq2);    // Пересечение двух последовательностей
 
-    foreach(var i in result) //  Организуем вывод
+    foreach(string i in result)
         Console.WriteLine(i);
 ```
-
-Идея в том, чтобы перевернуть каждую строку и взять все элементы до первой цифры не включительно
 
 ## 4.9
 
