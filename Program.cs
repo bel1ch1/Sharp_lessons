@@ -7,23 +7,37 @@ using System.Web.Helpers;
 
 class Program
 {
-    static void Main (string[] args){
-        int K = 2;
-        List<string> A = new List<string> { "ABC123", "DEF456", "GHI789", "JKL10", "MNO11", "PQR12" };
 
-        List<string> seq1 = A.Take(3 * K).ToList();
+     public struct Student
+        {
+            public int SchoolNumber { get; set; }
+            public int AdmissionYear { get; set; }
+            public string LastName { get; set; }
+        }
 
-        // Находим второй фрагмент (элементы после последнего элемента, оканчивающегося цифрой)
-        List<string> seq2 = A.SkipWhile(s => !char.IsDigit(s.Last())).Skip(1).ToList();
+    static void Main(string[] args)
+    {
+        List<Student> students = new List<Student>
+        {
+            new Student { SchoolNumber = 1, AdmissionYear = 2020, LastName = "Smith" },
+            new Student { SchoolNumber = 2, AdmissionYear = 2020, LastName = "Johnson" },
+            new Student { SchoolNumber = 1, AdmissionYear = 2021, LastName = "Williams" },
+            new Student { SchoolNumber = 3, AdmissionYear = 2021, LastName = "Jones" },
+            new Student { SchoolNumber = 1, AdmissionYear = 2021, LastName = "Shelma"}
+        };
 
-        // Получаем пересечение двух фрагментов
-        IEnumerable<string> intersection = seq1.Intersect(seq2).Distinct();
+        var yearGroups = students.GroupBy(s => s.AdmissionYear)
+                                 .Select(group => new
+                                 {
+                                     Year = group.Key,
+                                     TotalStudents = group.Count()
+                                 })
+                                 .OrderBy(group => group.Year);
 
-        // Сортируем пересечение по длине строк, затем по возрастанию
-        List<string> sort = intersection.OrderBy(s => s.Length).ThenBy(s => s).ToList();
+        var maxYear = yearGroups.MaxBy(group => group.TotalStudents);
+        var minYear = yearGroups.MinBy(group => group.TotalStudents);
 
-        // Выводим результат
-        foreach (string str in sort)
-            Console.WriteLine(str);
+        Console.WriteLine($"MAX: {maxYear}");
+        Console.WriteLine($"MIN: {minYear}");
         }
 }
