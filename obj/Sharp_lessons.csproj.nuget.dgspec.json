@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/andy/Sharp_lessons/Sharp_lessons.csproj": {}
+    "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj": {}
   },
   "projects": {
-    "/home/andy/Sharp_lessons/Sharp_lessons.csproj": {
+    "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
+        "projectUniqueName": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
         "projectName": "Sharp_lessons",
-        "projectPath": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
-        "packagesPath": "/home/andy/.nuget/packages/",
-        "outputPath": "/home/andy/Sharp_lessons/obj/",
+        "projectPath": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "C:\\SomeStaff\\Sharp_lessons\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/andy/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,6 +37,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System-Web-Helpers.dll": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

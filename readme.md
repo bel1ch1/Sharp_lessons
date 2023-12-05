@@ -154,6 +154,26 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 элементов) отсортировать по возрастанию длин строк, а строки одинаковой длины – в
 лексикографическом порядке по возрастанию.
 
+```c#
+        int K = 2;
+        List<string> A = new List<string> { "ABC123", "DEF456", "GHI789", "JKL10", "MNO11", "PQR12" };
+
+        List<string> seq1 = A.Take(3 * K).ToList();
+
+        // Находим второй фрагмент (элементы после последнего элемента, оканчивающегося цифрой)
+        List<string> seq2 = A.SkipWhile(s => !char.IsDigit(s.Last())).Skip(1).ToList();
+
+        // Получаем пересечение двух фрагментов
+        IEnumerable<string> intersection = seq1.Intersect(seq2).Distinct();
+
+        // Сортируем пересечение по длине строк, затем по возрастанию
+        List<string> sort = intersection.OrderBy(s => s.Length).ThenBy(s => s).ToList();
+
+        // Выводим результат
+        foreach (string str in sort)
+            Console.WriteLine(str);
+```
+
 ## 4.9
 
 Исходная последовательность содержит сведения об абитуриентах. Каждый
@@ -164,6 +184,56 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 затем год). Сведения о каждом годе выводить на новой строке и упорядочивать по
 возрастанию числа школ, а для совпадающих чисел — по возрастанию номера года.
 
-``c#
+```c#
+    public struct Student
+        {
+            public int SchoolNumber { get; set; }
+            public int AdmissionYear { get; set; }
+            public string LastName { get; set; }
+        }
 
+    static void Main(string[] args)
+    {
+        List<Student> students = new List<Student>
+        {
+            new Student { SchoolNumber = 1, AdmissionYear = 2020, LastName = "Smith" },
+            new Student { SchoolNumber = 2, AdmissionYear = 2020, LastName = "Johnson" },
+            new Student { SchoolNumber = 1, AdmissionYear = 2021, LastName = "Williams" },
+            new Student { SchoolNumber = 3, AdmissionYear = 2021, LastName = "Jones" },
+        };
+
+
+        var result = from student in students
+                     group student.SchoolNumber by student.AdmissionYear into grouped
+                     orderby grouped.Count(), grouped.Key
+                     select new { Year = grouped.Key, SchoolCount = grouped.Distinct().Count() };
+
+        foreach(var i in result)
+            Console.WriteLine(i);
+    }
 ```
+
+## 4.10
+
+Из последовательности (см. п.9) определить, в какие годы общее число
+абитуриентов для всех школ было наибольшим и наименьшим, и вывести это число, а также
+годы, в которые оно было достигнуто (годы упорядочивать по возрастанию, каждое число
+выводить на новой строке).
+
+## 4.11
+
+Дано целое число K – код одного из клиентов фитнес-центра. Исходная
+последовательность содержит сведения о клиентах этого фитнес-центра. Каждый элемент
+последовательности включает следующие целочисленные поля:
+
+<Код клиента> <Год> <Номер месяца>
+<Продолжительность занятий (в часах)>
+
+Для каждого года, в котором клиент с кодом K посещал центр, определить месяц, в
+котором продолжительность занятий данного клиента была наименьшей для данного года
+(если таких месяцев несколько, то выбирать первый из этих месяцев в исходном наборе;
+месяцы с нулевой продолжительностью занятий не учитывать). Сведения о каждом годе
+выводить на новой строке в следующем порядке: наименьшая продолжительность занятий,
+год, номер месяца. Упорядочивать сведения по возрастанию продолжительности занятий, а
+при равной продолжительности – по возрастанию номера года. Если данные о клиенте с
+кодом K отсутствуют, то записать в результирующий файл строку «Нет данных».

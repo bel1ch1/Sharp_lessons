@@ -1,41 +1,29 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Linq;
-=======
 using System.Security.Cryptography;
 using System.Xml.Schema;
->>>>>>> 294c73edae786b5fd4acf61b4dc4ecd31d9b911b
 using System.Collections.Generic;
-
+using System.Web.Helpers;
 
 class Program
 {
-    static void Main(string[] args)
-    {
-<<<<<<< HEAD
-
-=======
+    static void Main (string[] args){
         int K = 2;
-        List<string> A = new List<string>()
- {
-     "ABC123",
-     "DEF456",
-     "XYZ12",
-     "LMN34",
-     "PQR5",
-     "STU",
-     "VW6"
- };
+        List<string> A = new List<string> { "ABC123", "DEF456", "GHI789", "JKL10", "MNO11", "PQR12" };
 
-    var seq1 = A.Take(K * 3); // выбираем все элементы из строк до К * 3
+        List<string> seq1 = A.Take(3 * K).ToList();
 
-    var seq2 = A.Select(p => p).Where(char.IsDigit())
+        // Находим второй фрагмент (элементы после последнего элемента, оканчивающегося цифрой)
+        List<string> seq2 = A.SkipWhile(s => !char.IsDigit(s.Last())).Skip(1).ToList();
 
-    var result = seq1.Intersect(seq2);    // Пересечение двух последовательностей
+        // Получаем пересечение двух фрагментов
+        IEnumerable<string> intersection = seq1.Intersect(seq2).Distinct();
 
-    foreach(string i in result)
-        Console.WriteLine(i);
+        // Сортируем пересечение по длине строк, затем по возрастанию
+        List<string> sort = intersection.OrderBy(s => s.Length).ThenBy(s => s).ToList();
 
->>>>>>> 294c73edae786b5fd4acf61b4dc4ecd31d9b911b
-    }
+        // Выводим результат
+        foreach (string str in sort)
+            Console.WriteLine(str);
+        }
 }

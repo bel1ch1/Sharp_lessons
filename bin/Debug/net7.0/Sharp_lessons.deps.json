@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "Sharp_lessons/1.0.0": {
+        "dependencies": {
+          "System-Web-Helpers.dll": "1.0.0"
+        },
         "runtime": {
           "Sharp_lessons.dll": {}
+        }
+      },
+      "System-Web-Helpers.dll/1.0.0": {
+        "runtime": {
+          "lib/Net40/System.Web.Helpers.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "System-Web-Helpers.dll/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YNi625gkYOPE1CN6HdDGW4Ve7/E4xxnBGsnTBdzz91b+Pk0WrE2hPPOrXJc9vTjW2PjRju0TeyUZYtBntYXuVA==",
+      "path": "system-web-helpers.dll/1.0.0",
+      "hashPath": "system-web-helpers.dll.1.0.0.nupkg.sha512"
     }
   }
 }

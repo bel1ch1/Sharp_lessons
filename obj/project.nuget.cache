@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "qL3Voy6RFJO6xvcwAGCORj7eMuNe2n7ugRluwTZo/wkVSwttOODGjNJqsT/C1mGHC7MWH1Mj8UiM7k5jRvwjQw==",
+  "dgSpecHash": "tCvWUbbJWBSmk2TIXU53H1Y5tKN8P9oUWIkVIbUuk6aEcZYIZIcSPbpJ+3gtJlMlnZebMpf3D3ER0APoZ4aFOA==",
   "success": true,
-  "projectFilePath": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "projectFilePath": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\system-web-helpers.dll\\1.0.0\\system-web-helpers.dll.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System-Web-Helpers.dll 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "System-Web-Helpers.dll",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
