@@ -7,10 +7,16 @@
 последний отрицательный элемент
 
 ```c#
-int[] numbers = new int[]{-1, -2, -3, 1, 2, 3}; // последовательность
-var one = from p in numbers where p > 0 select p; // первый запросс
-var two = from k in numbers where k < 0 select k; // второй запросс
-    // консольный вывод с использованием методов First и Last
+// последовательность
+int[] numbers = new int[]{-1, -2, -3, 1, 2, 3};
+
+// первый запросс
+var one = from p in numbers where p > 0 select p;
+
+// второй запросс
+var two = from k in numbers where k < 0 select k;
+
+// консольный вывод с использованием методов First и Last
 Console.WriteLine(one.First());
 Console.WriteLine(two.Last());
 ```
@@ -21,10 +27,16 @@ Console.WriteLine(two.Last());
 A. Вывести первый положительный элемент последовательности A оканчивающийся цифрой D. Если требуемых элементов в последовательности A нет, то вывести 0
 
 ```c#
-int[] numbers = new int[]{11, 22, 33, 1, 2, 3};
-int K = 3; // задаем переменную
+    // массив целых чисел
+    int[] numbers = {11, 22, 33, 1, 2, 3};
+
+    // задаем переменную
+    int K = 3;
+
     // применяем запросс
-var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
+    var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
+
+    // вывод запроса в консоль
     Console.WriteLine(selectionKey);
 ```
 
@@ -35,13 +47,18 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 строк в последовательности A нет, то вывести строку «Not found»
 
 ```c#
+    // массив строк
     string[] A = new string[]{"f11", "f22", "f33", "1kf", "fk2", "3kf"};
-    int k = 3;
 
-        var output = A.LastOrDefault(
-            value => char.IsDigit(value[0]) && value.Length == L, "Not found");
+    // задаем переменную
+    int L = 3;
 
-        Console.WriteLine(output);
+    // применяем запросс
+    var output = A.LastOrDefault(
+        value => char.IsDigit(value[0]) && value.Length == L, "Not found");
+
+    // вывод запроса в консоль
+    Console.WriteLine(output);
 ```
 
 ## 4.4
@@ -51,9 +68,13 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 извлеченных чисел на обратный.
 
 ```c#
+    // массив целых чисел
     int[] A = new int[]{1, 2, 3, 4, 5 ,6, 7, 8, 9};
+
+    // Задаем переменную
     int D = 3;
 
+    // применяем запросс
     // SkipWhile оставляет в массиве только значения проходящие проверку
     var arr = A.SkipWhile(
                 value => value < D
@@ -61,6 +82,7 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
                 value => value % 2 != 0
             ).Reverse();
 
+        // вывод запроса в консоль
         foreach(var i in arr)
             Console.WriteLine(i);
 ```
@@ -73,7 +95,10 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 извлеченных строк на обратный.
 
 ```c#
+
     int K = 5;
+
+
     string[] A = {"Aaaaa","Bbbbbb", "aaaaa", "Ccccc", "Ddddd"};
 
         // Take k -1 возвращает срез массива
@@ -82,6 +107,7 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
           && value.Length % 2 != 0
           ).Reverse();
 
+    // вывод запроса в консоль
     foreach(var i in output)
         Console.WriteLine(i);
 ```
@@ -95,16 +121,24 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 одинаковых элементов) отсортировать по убыванию.
 
 ```c#
+
     int D = 3;
+
+
     int K = 6;
+
+
     int[] A = new int[]{1, 2, 3, 4, 5 ,6, 7, 8, 9};
-    int[] Q = A.Distinct().ToArray(); // создаем копию А без дубликатов
+
+    // создаем копию А без дубликатов
+    int[] Q = A.Distinct().ToArray();
 
     var query1 = Q.TakeWhile(p=> p < D);  // берем все числа до 3 не включительно
     var query2 = Q.SkipWhile(p=> p < K);  // берем все числа больште 6 включительно
 
     var query3 = query1.Union(query2);  // объединяем последоватеольности 2 запросов
 
+    // вывод запроса в консоль
     foreach(int i in query3)
         Console.WriteLine(i);
 ```
@@ -124,6 +158,7 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
 
     var difference = A.Take(K -1).Where(p=> p % 2 == 0);
 
+    // вывод запроса в консоль
     foreach(int i in difference)
         Console.WriteLine(i);
 ```
@@ -192,6 +227,7 @@ var selectionKey = numbers.FirstOrDefault(p => p % 10 == K, 0);
                      orderby grouped.Count(), grouped.Key
                      select new { Year = grouped.Key, SchoolCount = grouped.Distinct().Count() };
 
+        // вывод запроса в консоль
         foreach(var i in result)
             Console.WriteLine(i);
     }
@@ -237,6 +273,7 @@ class Program
         var maxYear = yearGroups.MaxBy(group => group.TotalStudents);
         var minYear = yearGroups.MinBy(group => group.TotalStudents);
 
+        // вывод запроса в консоль
         Console.WriteLine($"MAX: {maxYear}");
         Console.WriteLine($"MIN: {minYear}");
         }
@@ -261,6 +298,7 @@ class Program
 кодом K отсутствуют, то записать в результирующий файл строку «Нет данных».
 
 ```c#
+// структура храненния данных для списка
 public struct User
         {
             public int ID { get; set; }
@@ -271,6 +309,7 @@ public struct User
 
     static void Main(string[] args)
     {
+        // делаем список поссещений
          List<User> students = new List<User>
         {
             new User { ID = 1, Year = 2020, Month_Number = 1, Duration_of_Classes_h = 14 },
@@ -281,7 +320,7 @@ public struct User
             new User { ID = 1, Year = 2021, Month_Number = 2, Duration_of_Classes_h = 0 },
             new User { ID = 1, Year = 2021, Month_Number = 3, Duration_of_Classes_h = 10 }
         };
-
+        // запрос сортирует клиента по годам и выбирает год с наихудшей поссещаемостью
         var min_Months = students.GroupBy(s => s.Year)
                         .Select(g => new
                         {
@@ -289,7 +328,7 @@ public struct User
                           Min_Months = g.OrderBy(p => p.Duration_of_Classes_h).First().Month_Number
                         })
                         .OrderBy(gr => gr.Year);
-
+        // вывод запроса в консоль
         foreach(var i in min_Months)
             Console.WriteLine($"Год: {i.Year}, Месяц с худшей поссещаемтостью: {i.Min_Months}");
 
