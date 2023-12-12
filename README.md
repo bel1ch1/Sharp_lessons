@@ -10,9 +10,9 @@ using System.Linq;
 
 ## Формат запуска
 
-Запуск проводится через интерфейс <a ref="https://learn.microsoft.com/ru-ru/dotnet/core/tools">.NET CLI(7.0.403)</a>
+Версия - [.NET CLI(7.0.403)](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
 
-Запускать программы через терменал
+Запускаются программы через терминал
 
 ```dotnet run```
 
