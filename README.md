@@ -1,13 +1,5 @@
 # Solutions LinQ
 
-## Используемые модули
-
-```c#
-using System;
-using System.Collections.Generic;
-using System.Linq;
- ```
-
 ## Формат запуска
 
 Версия - [.NET CLI(7.0.403)](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
@@ -15,6 +7,16 @@ using System.Linq;
 Запускаются программы через терминал
 
 ```dotnet run```
+
+---
+
+## Используемые модули
+
+```c#
+using System;
+using System.Collections.Generic;
+using System.Linq;
+ ```
 
 ---
 
