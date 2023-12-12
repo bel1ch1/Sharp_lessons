@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QAMvUIi1VXdYNOm9debhK5h/zLp4fotXMPp8mVv0pvQ26m/BpPtn2unxVjD1q+d7kShTNyeYgL+yPOMd+le+9A==",
+  "dgSpecHash": "tCvWUbbJWBSmk2TIXU53H1Y5tKN8P9oUWIkVIbUuk6aEcZYIZIcSPbpJ+3gtJlMlnZebMpf3D3ER0APoZ4aFOA==",
   "success": true,
-  "projectFilePath": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
+  "projectFilePath": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
   "expectedPackageFiles": [
-    "/home/andy/.nuget/packages/system-web-helpers.dll/1.0.0/system-web-helpers.dll.1.0.0.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\system-web-helpers.dll\\1.0.0\\system-web-helpers.dll.1.0.0.nupkg.sha512"
   ],
   "logs": [
     {

@@ -245,8 +245,7 @@ class Program
 
 ## 4.11
 
-Дано целое число K – код одного из клиентов фитнес-центра. Исходная
-последовательность содержит сведения о клиентах этого фитнес-центра. Каждый элемент
+Исходная последовательность содержит сведения о клиентах этого фитнес-центра. Каждый элемент
 последовательности включает следующие целочисленные поля:
 
 <Код клиента> <Год> <Номер месяца>
@@ -260,3 +259,39 @@ class Program
 год, номер месяца. Упорядочивать сведения по возрастанию продолжительности занятий, а
 при равной продолжительности – по возрастанию номера года. Если данные о клиенте с
 кодом K отсутствуют, то записать в результирующий файл строку «Нет данных».
+
+```c#
+public struct User
+        {
+            public int ID { get; set; }
+            public int Year { get; set; }
+            public int Month_Number { get; set; }
+            public int Duration_of_Classes_h { get; set; }
+        }
+
+    static void Main(string[] args)
+    {
+         List<User> students = new List<User>
+        {
+            new User { ID = 1, Year = 2020, Month_Number = 1, Duration_of_Classes_h = 14 },
+            new User { ID = 1, Year = 2020, Month_Number = 2, Duration_of_Classes_h = 7 },
+            new User { ID = 1, Year = 2020, Month_Number = 3, Duration_of_Classes_h = 10 },
+
+            new User { ID = 1, Year = 2021, Month_Number = 1, Duration_of_Classes_h = 13 },
+            new User { ID = 1, Year = 2021, Month_Number = 2, Duration_of_Classes_h = 0 },
+            new User { ID = 1, Year = 2021, Month_Number = 3, Duration_of_Classes_h = 10 }
+        };
+
+        var min_Months = students.GroupBy(s => s.Year)
+                        .Select(g => new
+                        {
+                          Year = g.Key,
+                          Min_Months = g.OrderBy(p => p.Duration_of_Classes_h).First().Month_Number
+                        })
+                        .OrderBy(gr => gr.Year);
+
+        foreach(var i in min_Months)
+            Console.WriteLine($"Год: {i.Year}, Месяц с худшей поссещаемтостью: {i.Min_Months}");
+
+    }
+```

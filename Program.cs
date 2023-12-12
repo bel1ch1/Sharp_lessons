@@ -8,36 +8,37 @@ using System.Collections.Generic;
 class Program
 {
 
-     public struct Student
+     public struct User
         {
-            public int SchoolNumber { get; set; }
-            public int AdmissionYear { get; set; }
-            public string LastName { get; set; }
+            public int ID { get; set; }
+            public int Year { get; set; }
+            public int Month_Number { get; set; }
+            public int Duration_of_Classes_h { get; set; }
         }
 
     static void Main(string[] args)
     {
-        List<Student> students = new List<Student>
+         List<User> students = new List<User>
         {
-            new Student { SchoolNumber = 1, AdmissionYear = 2020, LastName = "Smith" },
-            new Student { SchoolNumber = 2, AdmissionYear = 2020, LastName = "Johnson" },
-            new Student { SchoolNumber = 1, AdmissionYear = 2021, LastName = "Williams" },
-            new Student { SchoolNumber = 3, AdmissionYear = 2021, LastName = "Jones" },
-            new Student { SchoolNumber = 1, AdmissionYear = 2021, LastName = "Shelma"}
+            new User { ID = 1, Year = 2020, Month_Number = 1, Duration_of_Classes_h = 14 },
+            new User { ID = 1, Year = 2020, Month_Number = 2, Duration_of_Classes_h = 7 },
+            new User { ID = 1, Year = 2020, Month_Number = 3, Duration_of_Classes_h = 10 },
+
+            new User { ID = 1, Year = 2021, Month_Number = 1, Duration_of_Classes_h = 13 },
+            new User { ID = 1, Year = 2021, Month_Number = 2, Duration_of_Classes_h = 0 },
+            new User { ID = 1, Year = 2021, Month_Number = 3, Duration_of_Classes_h = 10 }
         };
 
-        var yearGroups = students.GroupBy(s => s.AdmissionYear)
-                                 .Select(group => new
-                                 {
-                                     Year = group.Key,
-                                     TotalStudents = group.Count()
-                                 })
-                                 .OrderBy(group => group.Year);
+        var min_Months = students.GroupBy(s => s.Year)
+                        .Select(g => new
+                        {
+                          Year = g.Key,
+                          Min_Months = g.OrderBy(p => p.Duration_of_Classes_h).First().Month_Number
+                        })
+                        .OrderBy(gr => gr.Year);
 
-        var maxYear = yearGroups.MaxBy(group => group.TotalStudents);
-        var minYear = yearGroups.MinBy(group => group.TotalStudents);
+        foreach(var i in min_Months)
+            Console.WriteLine($"Год: {i.Year}, Месяц с минимальным количеством часов: {i.Min_Months}");
 
-        Console.WriteLine($"MAX: {maxYear}");
-        Console.WriteLine($"MIN: {minYear}");
-        }
+    }
 }
