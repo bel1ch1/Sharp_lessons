@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj": {}
+    "/home/andy/Sharp_lessons/Sharp_lessons.csproj": {}
   },
   "projects": {
-    "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj": {
+    "/home/andy/Sharp_lessons/Sharp_lessons.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
+        "projectUniqueName": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
         "projectName": "Sharp_lessons",
-        "projectPath": "C:\\SomeStaff\\Sharp_lessons\\Sharp_lessons.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\SomeStaff\\Sharp_lessons\\obj\\",
+        "projectPath": "/home/andy/Sharp_lessons/Sharp_lessons.csproj",
+        "packagesPath": "/home/andy/.nuget/packages/",
+        "outputPath": "/home/andy/Sharp_lessons/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/andy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
         }
       }
     }
