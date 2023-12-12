@@ -16,4 +16,8 @@ using System.Linq;
 
 ```dotnet run```
 
-- [4-ая тетрадь](readme_files/c#_4nb.md)
+---
+
+## CopyBooks
+
+- [4-ая тетрадь](readme_files/CopyBook4.md)
