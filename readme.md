@@ -16,4 +16,4 @@ using System.Linq;
 
 ```dotnet run```
 
-[4-ая тетрадь](.\c#_4nb.md)
+[4-ая тетрадь](/readme_files/c#_4nb.md)
