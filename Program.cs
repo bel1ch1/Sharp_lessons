@@ -13,36 +13,53 @@ class Program
 
     static void Main(string[] args)
     {
-        List<A> users = new List<A>{
-            new A { ID = 1, Year_Of_Birth = 2000, Street = "a" },
-            new A { ID = 2, Year_Of_Birth = 2001, Street = "b" },
-            new A { ID = 3, Year_Of_Birth = 2002, Street = "c" }
+        List<B> products_info = new List<B>{
+            new B { Vendor_Code = 1, Category = "a", Country = "A" },
+            new B { Vendor_Code = 2, Category = "b", Country = "B"},
+            new B { Vendor_Code = 3, Category = "c", Country = "C" }
          };
 
-        List<C> discounts = new List<C>{
-            new C { ID = 1, Shop_ID = 1, discount = 10},
-            new C { ID = 2, Shop_ID = 1, discount = 5},
-            new C { ID = 3, Shop_ID = 1, discount = 2}
+        List<D> prices = new List<D>{
+            new D { Vendor_Code = 1, Shop_ID = 1, price = 100 },
+            new D { Vendor_Code = 2, Shop_ID = 2, price = 1321 },
+            new D { Vendor_Code = 3, Shop_ID = 3, price = 1000 }
         };
 
-        var result = discounts.GroupBy(
-                        itemC => itemC.Shop_ID
+        var _output =
+                    products_info.GroupBy(
+                        itemB => itemB.Category
                     ).Select(
-                        groupC_by_shop_ID => groupC_by_shop_ID.MaxBy(
-                            itemC => Tuple.Create(itemC.discount, itemC.ID)
-                    )
-                    ).OrderBy(itemC => itemC.Shop_ID).
-                    Select(
-                        itemC => $"{ itemC.Shop_ID
-                                 }\t{ itemC.ID
-                                 }\t{ users.FirstOrDefault(
-                                        itemA => itemA.ID == itemC.ID
-                                    , new A()).Year_Of_Birth
-                                 }\t{ itemC.discount}"
+                        groupB_by_Category => new {
+
+                            shop_amount=prices.GroupBy(
+                                    itemD => itemD.Shop_ID
+                                ).Count(
+                                    groupD_by_Shop_Id => groupD_by_Shop_Id.Count(
+                                        itemD => products_info.Any(
+                                            itemB => itemB.Vendor_Code == itemD.Vendor_Code
+                                        )
+                                    ) != 0
+                                ),
+
+                            Category=(groupB_by_Category.FirstOrDefault(new B())).Category,
+
+                            country_amount=groupB_by_Category.Count()
+                        }
+
+                    ).OrderBy(
+                        _item => _item.shop_amount
+                    ).ThenBy(
+                        _item => _item.Category
+                    ).ThenBy(
+                        _item => _item.country_amount
+
+                    ).Select(
+                        _item => $"{_item.shop_amount
+                                }\t{_item.Category
+                                }\t{_item.country_amount
+                                }"
                     );
-
-                    foreach(var value in result)
-                        Console.WriteLine(value);
-
+        foreach(var _value in _output)
+            Console.WriteLine(_value);
     }
 }

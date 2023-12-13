@@ -83,3 +83,79 @@ static void Main(string[] args)
 
     }
 ```
+
+## 5.2
+
+Даны последовательности A и C. Для каждого магазина и каждой улицы определить количество
+потребителей, живущих на этой улице и имеющих скидку в этом магазине (вначале выводится название
+магазина, затем название улицы, затем количество потребителей со скидкой). Если для некоторой пары
+«магазин–улица» потребители со скидкой не найдены, то данные об этой паре не выводятся. Сведения о
+каждой паре «магазин–улица» выводить на новой строке и упорядочивать по названиям магазинов в
+алфавитном порядке, а для одинаковых названий магазинов — по названиям улиц (также в алфавитном
+порядке)
+
+```c#
+
+```
+
+## 5.3
+
+Даны последовательности B и D. Для каждой категории товаров определить количество магазинов,
+предлагающих товары данной категории, а также количество стран, в которых произведены товары данной
+категории, представленные в магазинах (вначале выводится количество магазинов, затем название категории,
+затем количество стран). Если для некоторой категории не найдено ни одного товара, представленного в
+каком-либо магазине, то информация о данной категории не выводится. Сведения о каждой категории выводить на новой строке и упорядочивать по убыванию количества магазинов, а в случае одинакового количества — по названиям категорий в алфавитном порядке
+
+```c#
+static void Main(string[] args)
+    {
+        List<B> products_info = new List<B>{
+            new B { Vendor_Code = 1, Category = "a", Country = "A" },
+            new B { Vendor_Code = 2, Category = "b", Country = "B"},
+            new B { Vendor_Code = 3, Category = "c", Country = "C" }
+         };
+
+        List<D> prices = new List<D>{
+            new D { Vendor_Code = 1, Shop_ID = 1, price = 100 },
+            new D { Vendor_Code = 2, Shop_ID = 2, price = 1321 },
+            new D { Vendor_Code = 3, Shop_ID = 3, price = 1000 }
+        };
+
+        var _output =
+                    products_info.GroupBy(
+                        itemB => itemB.Category
+                    ).Select(
+                        groupB_by_Category => new {
+
+                            shop_amount=prices.GroupBy(
+                                    itemD => itemD.Shop_ID
+                                ).Count(
+                                    groupD_by_Shop_Id => groupD_by_Shop_Id.Count(
+                                        itemD => products_info.Any(
+                                            itemB => itemB.Vendor_Code == itemD.Vendor_Code
+                                        )
+                                    ) != 0
+                                ),
+
+                            Category=(groupB_by_Category.FirstOrDefault(new B())).Category,
+
+                            country_amount=groupB_by_Category.Count()
+                        }
+
+                    ).OrderBy(
+                        _item => _item.shop_amount
+                    ).ThenBy(
+                        _item => _item.Category
+                    ).ThenBy(
+                        _item => _item.country_amount
+
+                    ).Select(
+                        _item => $"{_item.shop_amount
+                                }\t{_item.Category
+                                }\t{_item.country_amount
+                                }"
+                    );
+        foreach(var _value in _output)
+            Console.WriteLine(_value);
+    }
+```
