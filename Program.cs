@@ -3,42 +3,46 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Xml.Schema;
 using System.Collections.Generic;
+using Sharp_lessons.models;
+using System.Net.Security;
 // using System.Web.Helpers;
 
 class Program
 {
 
-     public struct User
-        {
-            public int ID { get; set; }
-            public int Year { get; set; }
-            public int Month_Number { get; set; }
-            public int Duration_of_Classes_h { get; set; }
-        }
 
     static void Main(string[] args)
     {
-         List<User> students = new List<User>
-        {
-            new User { ID = 1, Year = 2020, Month_Number = 1, Duration_of_Classes_h = 14 },
-            new User { ID = 1, Year = 2020, Month_Number = 2, Duration_of_Classes_h = 7 },
-            new User { ID = 1, Year = 2020, Month_Number = 3, Duration_of_Classes_h = 10 },
+        List<A> users = new List<A>{
+            new A { ID = 1, Year_Of_Birth = 2000, Street = "a" },
+            new A { ID = 2, Year_Of_Birth = 2001, Street = "b" },
+            new A { ID = 3, Year_Of_Birth = 2002, Street = "c" }
+         };
 
-            new User { ID = 1, Year = 2021, Month_Number = 1, Duration_of_Classes_h = 13 },
-            new User { ID = 1, Year = 2021, Month_Number = 2, Duration_of_Classes_h = 0 },
-            new User { ID = 1, Year = 2021, Month_Number = 3, Duration_of_Classes_h = 10 }
+        List<C> discounts = new List<C>{
+            new C { ID = 1, Shop_ID = 1, discount = 10},
+            new C { ID = 2, Shop_ID = 1, discount = 5},
+            new C { ID = 3, Shop_ID = 1, discount = 2}
         };
 
-        var min_Months = students.GroupBy(s => s.Year)
-                        .Select(g => new
-                        {
-                          Year = g.Key,
-                          Min_Months = g.OrderBy(p => p.Duration_of_Classes_h).First().Month_Number
-                        })
-                        .OrderBy(gr => gr.Year);
+        var result = discounts.GroupBy(
+                        itemC => itemC.Shop_ID
+                    ).Select(
+                        groupC_by_shop_ID => groupC_by_shop_ID.MaxBy(
+                            itemC => Tuple.Create(itemC.discount, itemC.ID)
+                    )
+                    ).OrderBy(itemC => itemC.Shop_ID).
+                    Select(
+                        itemC => $"{ itemC.Shop_ID
+                                 }\t{ itemC.ID
+                                 }\t{ users.FirstOrDefault(
+                                        itemA => itemA.ID == itemC.ID
+                                    , new A()).Year_Of_Birth
+                                 }\t{ itemC.discount}"
+                    );
 
-        foreach(var i in min_Months)
-            Console.WriteLine($"Год: {i.Year}, Месяц с минимальным количеством часов: {i.Min_Months}");
+                    foreach(var value in result)
+                        Console.WriteLine(value);
 
     }
 }

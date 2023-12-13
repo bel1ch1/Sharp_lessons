@@ -8,6 +8,6 @@ namespace Sharp_lessons.models
         {
             public int ID{ get; set; }
             public int Vendor_Code { get; set;}
-            public string Shop_Name{ get; set; }
+            public int Shop_ID { get; set; }
         }
 }
