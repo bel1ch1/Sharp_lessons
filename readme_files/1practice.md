@@ -1,5 +1,5 @@
 # practice 1
-Structures [Тут](/models/Currency.cs)
+Structures and Classes [Тут](/models/Currency.cs)
 ## 1. Разработать единую структуру JSON-файла для хранения исходных данных
 
 json structure:
@@ -36,7 +36,12 @@ json structure:
 ## 2. Разработать возможность добавления новой оценки для студента
 
 ```c#
-
+using (FileStream fs = new FileStream("struct.json", FileMode.OpenOrCreate))
+        {
+            New_mark a = new New_mark(1, 2, 4);
+            await JsonSerializer.Serialization<New_mark>(fs, a);
+            Console.WriteLine("Data has been saved to file");
+        }
 ```
 
 ---
