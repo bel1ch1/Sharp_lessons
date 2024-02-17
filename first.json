@@ -1,0 +1,25 @@
+{
+    "student":[
+        {
+            "id_stud":"int",
+            "name_stud":"string",
+            "sure_name":"string",
+            "sure_name2":"string"
+        }
+    ],
+   "subject":[
+            {
+                "id_subj":"int",
+                "name_subj":"string",
+                "volume_of_lectures":"int",
+                "volume_of_practise":"int"
+            }
+        ],
+        "lessons_plane":[
+            {
+                "id_stud":"int",
+                "id_subj":"int",
+                "grade":"int"
+            }
+        ]
+}
