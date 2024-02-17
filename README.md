@@ -24,3 +24,4 @@ using System.Linq;
 
 - [4-ая тетрадь](readme_files/CopyBook4.md)
 - [5-ая тетрадь](readme_files/CopyBook5.md)
+- [1-ая практика](readme_files/1practice.md)
