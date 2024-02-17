@@ -47,3 +47,11 @@ C:/SomeStaff/Sharp_lessons/obj/Debug/net7.0/Sharp_lessons.csproj.CopyComplete
 /home/andy/Sharp_lessons/Sharp_lessons/obj/Debug/net7.0/Sharp_lessons.pdb
 /home/andy/Sharp_lessons/Sharp_lessons/obj/Debug/net7.0/Sharp_lessons.genruntimeconfig.cache
 /home/andy/Sharp_lessons/Sharp_lessons/obj/Debug/net7.0/ref/Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.csproj.AssemblyReference.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.GeneratedMSBuildEditorConfig.editorconfig
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.AssemblyInfoInputs.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.AssemblyInfo.cs
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.csproj.CoreCompileInputs.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\refint\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.pdb
