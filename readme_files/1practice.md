@@ -1,5 +1,5 @@
 # practice 1
-
+Structures [Тут](/models/Currency.cs)
 ## 1. Разработать единую структуру JSON-файла для хранения исходных данных
 
 json structure:
