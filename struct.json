@@ -1,25 +1,61 @@
 {
     "student":[
         {
-            "id_stud":"int",
-            "name_stud":"string",
-            "sure_name":"string",
-            "sure_name2":"string"
+            "id_stud":1,
+            "name_stud":"Alice",
+            "sure_name":"None",
+            "sure_name2":"None"
+        },
+        {
+            "id_stud":2,
+            "name_stud":"Bane",
+            "sure_name":"None",
+            "sure_name2":"None"
+        },
+        {
+            "id_stud":3,
+            "name_stud":"Jhoe",
+            "sure_name":"None",
+            "sure_name2":"None"
+        },
+        {
+            "id_stud":4,
+            "name_stud":"Kane",
+            "sure_name":"None",
+            "sure_name2":"None"
         }
     ],
    "subject":[
             {
-                "id_subj":"int",
-                "name_subj":"string",
-                "volume_of_lectures":"int",
-                "volume_of_practise":"int"
+                "id_subj":1,
+                "name_subj":"Math",
+                "volume_of_lectures":"32",
+                "volume_of_practise":"104"
+            },
+            {
+                "id_subj":2,
+                "name_subj":"History",
+                "volume_of_lectures":"32",
+                "volume_of_practise":"104"
+            },
+            {
+                "id_subj":3,
+                "name_subj":"Informatics",
+                "volume_of_lectures":"64",
+                "volume_of_practise":"128"
+            },
+            {
+                "id_subj":4,
+                "name_subj":"literature",
+                "volume_of_lectures":"32",
+                "volume_of_practise":"104"
             }
         ],
-        "lessons_plane":[
+    "lessons_plane":[
             {
-                "id_stud":"int",
-                "id_subj":"int",
-                "grade":"int"
+                "id_stud":1,
+                "id_subj":1,
+                "grade":5
             }
         ]
 }
