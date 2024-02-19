@@ -55,3 +55,13 @@ C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.csproj.CoreCompileInpu
 C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.dll
 C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\refint\Sharp_lessons.dll
 C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.pdb
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.exe
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.deps.json
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.runtimeconfig.json
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.dll
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Sharp_lessons.pdb
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\SomeStaff\Sharp_lessons\bin\Debug\net7.0\System.Web.Helpers.dll
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.csproj.CopyComplete
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\Sharp_lessons.genruntimeconfig.cache
+C:\SomeStaff\Sharp_lessons\obj\Debug\net7.0\ref\Sharp_lessons.dll

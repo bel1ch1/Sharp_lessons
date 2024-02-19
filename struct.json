@@ -56,6 +56,16 @@
                 "id_stud":1,
                 "id_subj":1,
                 "grade":5
+            },
+            {
+                "id_stud":2,
+                "id_subj":1,
+                "grade":5
+            },
+            {
+                "id_stud":3,
+                "id_subj":1,
+                "grade":5
             }
         ]
 }
